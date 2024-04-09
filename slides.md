@@ -1,16 +1,21 @@
 ---
 # try also 'default' to start simple
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
+theme: default
+# background: "black"
 # some information about your slides, markdown enabled
+fonts:
+  # basically the text
+  sans: Poppins
+  # use with `font-serif` css class from UnoCSS
+  serif: Poppins
+  # for code blocks, inline code, etc.
+  mono: Fira Code
 title: Welcome to Slidev
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
+  ## Bandada ETHDam 2024
+  Presentation slides for ETHDam 2024.
 
-  Learn more at [Sli.dev](https://sli.dev)
+  Learn more at [Bandada](https://docs.bandada.pse.dev)
 # apply any unocss classes to the current slide
 class: text-center
 # https://sli.dev/custom/highlighters.html
@@ -22,16 +27,23 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/guide/syntax#mdc-syntax
 mdc: true
+hideInToc: true
 ---
 
-# Welcome to Slidev
+# Bandada: Managing Privacy-Preserving Groups
 
-Presentation slides for developers
+<div class="text-25px opacity-85">
+Vivian Plasencia
+</div>
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+<img
+  class="absolute top-2 left-2 w-10"
+  src="images/flock-1.svg"
+  alt="Flock"
+/>
+
+<div class="abs-b m-6 flex text-12px opacity-70">
+  <p>Privacy & Scaling Explorations | Ethereum Foundation</p>
 </div>
 
 <div class="abs-br m-6 flex gap-2">
@@ -44,40 +56,10 @@ Presentation slides for developers
   </a>
 </div>
 
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-transition: fade-out
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
-
 <style>
 h1 {
   background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-image: linear-gradient(45deg, #FF5242 10%, #EB179B 20%);
   background-size: 100%;
   -webkit-background-clip: text;
   -moz-background-clip: text;
@@ -87,8 +69,175 @@ h1 {
 </style>
 
 <!--
+The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
+-->
+
+---
+layout: two-cols
+layoutClass: gap-16
+hideInToc: true
+---
+
+# Structure
+
+<br>
+
+![birds](images/birds.jpeg)
+
+::right::
+
+<Toc minDepth="1" maxDepth="1" listClass=""></Toc>
+
+---
+transition: slide-left
+---
+
+# What is Bandada?
+
+<br>
+
+Bandada is an infrastructure to manage privacy-preserving groups. It also has antisybil mechanisms which means that you can only join a group if you meet a specific criteria.
+
+<br>
+
+The groups can be managed using the Dashboard, the REST API endpoints or the API SDK library.
+
+<br>
+<br>
+
+<div v-click>
+Bandada is a Spanish word that means group of birds. It is the same as the English word flock.
+</div>
+
+<!--
+You can have `style` tag in markdown to override the style for the current page.
+Learn more: https://sli.dev/guide/syntax#embedded-styles
+-->
+
+<!--
 Here is another comment.
 -->
+
+---
+transition: slide-left
+---
+
+# Bandada use cases
+
+- Platforms for DAOs
+- Group of people in a private organization
+- Group with members who have contributed to a specific GitHub repository
+- Groups of wallets holding a specific NFT
+- Group of members with +500 Twitter (X) followers
+
+
+---
+transition: slide-up
+layout: center
+---
+
+<img
+  class="center w-[50rem]"
+  src="images/bandada-infrastructure.png"
+  alt=""
+/>
+
+---
+transition: slide-up
+---
+
+## Bandada Functionalities
+
+<br>
+
+| Functionalities             | Off-chain | On-chain |
+| --------------------------- | --------- | -------- |
+| Create group(s)             | ✅        | ✅       |
+| Update group(s)             | ✅        | ❌       |
+| Remove group(s)             | ✅        | ❌       |
+| Invite code to join a group | ✅        | ❌       |
+| Credentials to join a group | ✅        | ❌       |
+| Add member(s)               | ✅        | ✅       |
+| Remove member(s)            | ✅        | ❌       |
+
+---
+transition: slide-up
+---
+
+## Tools to manage the groups
+
+<br>
+
+| Tools     | Off-chain | On-chain |
+| --------- | --------- | -------- |
+| API       | ✅        | ❌       |
+| API SDK   | ✅        | ❌       |
+| Dashboard | ✅        | ✅       |
+
+---
+transition: slide-left
+layout: center
+---
+
+<img
+  class="center w-[38rem]"
+  src="images/bandada-semaphore-off-chain-app-architecture.png"
+  alt=""
+/>
+
+---
+transition: slide-left
+---
+
+# Bandada Roadmap
+
+- Improve user experience and developer experience (Documentation, SDKs, CLI, templates).
+- Integrate other protocols like EAS, POAP, Zupass, etc.
+- Logical operators for credentials, create groups with multiple credentials.
+- Work on on-chain groups to have the same functionalities that off-chain groups have now (join groups with invite link, credential groups, etc.).
+- Build a modular architecture that supports several data structures and different types of groups, not just Semaphore Groups. 
+
+---
+transition: slide-left
+---
+
+# Hacker Guide
+
+qrcode
+
+---
+transition: slide-up
+layout: two-cols
+---
+
+# Connect
+
+<br>
+
+<div class="text-center w-50">
+
+<img
+  class="rounded-full w-50"
+  src="images/vivianAvatar.jpg"
+  alt=""
+/>
+
+<div>Vivian Plasencia</div>
+</div>
+
+::right::
+
+### Telegram @vivianpc
+
+<br>
+<br>
+
+### Discord @Vivian Plasencia#2192
+
+<br>
+<br>
+
+### X (Twitter) @ViviPlasenciaC
 
 ---
 transition: slide-up
@@ -118,25 +267,6 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 />
 
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: two-cols
-layoutClass: gap-16
----
-
-# Table of contents
-
-You can use the `Toc` component to generate a table of contents for your slides:
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
-
-::right::
-
-<Toc v-click minDepth="1" maxDepth="2"></Toc>
 
 ---
 layout: image-right
