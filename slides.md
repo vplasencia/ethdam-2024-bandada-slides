@@ -130,7 +130,6 @@ transition: slide-left
 - Groups of wallets holding a specific NFT
 - Group of members with +500 Twitter (X) followers
 
-
 ---
 transition: slide-up
 layout: center
@@ -195,7 +194,7 @@ transition: slide-left
 - Integrate other protocols like EAS, POAP, Zupass, etc.
 - Logical operators for credentials, create groups with multiple credentials.
 - Work on on-chain groups to have the same functionalities that off-chain groups have now (join groups with invite link, credential groups, etc.).
-- Build a modular architecture that supports several data structures and different types of groups, not just Semaphore Groups. 
+- Build a modular architecture that supports several data structures and different types of groups, not just Semaphore Groups.
 
 ---
 transition: slide-left
