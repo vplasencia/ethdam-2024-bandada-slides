@@ -27,10 +27,10 @@ jobs:
           node-version: "lts/*"
 
       - name: Install dependencies
-        run: yarn
+        run: npm install
 
       - name: Build
-        run: yarn build -- --base /ethdam-2024-bandada-slides/
+        run: npm run build -- --base /ethdam-2024-bandada-slides/
 
       - uses: actions/configure-pages@v4
 
