@@ -5,7 +5,9 @@
   "scripts": {
     "build": "slidev build",
     "dev": "slidev --open",
-    "export": "slidev export"
+    "export": "slidev export",
+    "prettier": "prettier -c .",
+    "prettier:write": "prettier -w ."
   },
   "dependencies": {
     "@slidev/cli": "^0.48.8",
@@ -13,5 +15,9 @@
     "@slidev/theme-seriph": "latest",
     "vue": "^3.4.21"
   },
-  "packageManager": "yarn@4.1.1"
+  "packageManager": "yarn@4.1.1",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "prettier-plugin-slidev": "^1.0.5"
+  }
 }
