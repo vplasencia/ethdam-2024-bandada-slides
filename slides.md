@@ -38,7 +38,7 @@ Vivian Plasencia
 
 <img
   class="absolute top-2 left-2 w-10"
-  src="images/flock-1.svg"
+  src="/flock-1.svg"
   alt="Flock"
 />
 
@@ -82,7 +82,7 @@ hideInToc: true
 
 <br>
 
-![birds](images/birds.jpeg)
+![birds](/birds.jpeg)
 
 ::right::
 
@@ -137,7 +137,7 @@ layout: center
 
 <img
   class="center w-[50rem]"
-  src="images/bandada-infrastructure.png"
+  src="/bandada-infrastructure.png"
   alt=""
 />
 
@@ -180,7 +180,7 @@ layout: center
 
 <img
   class="center w-[38rem]"
-  src="images/bandada-semaphore-off-chain-app-architecture.png"
+  src="/bandada-semaphore-off-chain-app-architecture.png"
   alt=""
 />
 
@@ -217,7 +217,7 @@ layout: two-cols
 
 <img
   class="rounded-full w-50"
-  src="images/vivianAvatar.jpg"
+  src="/vivianAvatar.jpg"
   alt=""
 />
 
