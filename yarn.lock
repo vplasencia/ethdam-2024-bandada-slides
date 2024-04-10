@@ -2236,6 +2236,7 @@ __metadata:
     "@slidev/cli": "npm:^0.48.8"
     "@slidev/theme-default": "npm:latest"
     "@slidev/theme-seriph": "npm:latest"
+    playwright-chromium: "npm:^1.43.0"
     prettier: "npm:^3.2.5"
     prettier-plugin-slidev: "npm:^1.0.5"
     vue: "npm:^3.4.21"
@@ -5846,6 +5847,26 @@ __metadata:
   version: 1.4.0
   resolution: "plantuml-encoder@npm:1.4.0"
   checksum: 10/cfe8831356bdd60ef80a748a04d3b0bfcbf827a499da6fb5ad853450e7a677129c1ec082cdfbc57817dee3e59c5f1f2d00d8082198173b34ced8196dcb34d8fe
+  languageName: node
+  linkType: hard
+
+"playwright-chromium@npm:^1.43.0":
+  version: 1.43.0
+  resolution: "playwright-chromium@npm:1.43.0"
+  dependencies:
+    playwright-core: "npm:1.43.0"
+  bin:
+    playwright: cli.js
+  checksum: 10/6964976431285d1a6f88649860c33cb7479f5fae54a8b3d4d38f96bf26ad92ba17beb7b9a947733a24b58cda5c2d8941781c5b00dd51963706ac54433c874da1
+  languageName: node
+  linkType: hard
+
+"playwright-core@npm:1.43.0":
+  version: 1.43.0
+  resolution: "playwright-core@npm:1.43.0"
+  bin:
+    playwright-core: cli.js
+  checksum: 10/f34c8c5b94c7ddd59b462b8f5dd0f9a8204ed14f470a151d46384c6854c78f5624d80a80a7873a335e2b0c15d54d0d92da2f97422ee708bf5e5693b81bb33a09
   languageName: node
   linkType: hard
 
