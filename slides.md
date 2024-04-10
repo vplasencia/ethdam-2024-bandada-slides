@@ -159,7 +159,7 @@ transition: slide-left
 Ideas to build with Bandada: [https://github.com/orgs/bandada-infra/discussions/367](https://github.com/orgs/bandada-infra/discussions/367)
 
 ---
-transition: slide-up
+transition: slide-left
 layout: center
 ---
 
@@ -188,7 +188,7 @@ transition: slide-up
 | Remove member(s)            | ✅        | ❌       |
 
 ---
-transition: slide-up
+transition: slide-left
 ---
 
 # Interact with Bandada
@@ -332,7 +332,7 @@ await apiSdk.removeMemberByApiKey(group.id, "1", apiKey)
 ```
 
 ---
-transition: slide-up
+transition: slide-left
 hideInToc: true
 ---
 
