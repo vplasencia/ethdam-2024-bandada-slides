@@ -165,7 +165,7 @@ layout: center
 
 <img
   class="center w-[50rem]"
-  src="/bandada-infrastructure.png"
+  src="/bandada-infrastructure.svg"
   alt=""
 />
 
@@ -371,7 +371,7 @@ layout: center
 
 <img
   class="center w-[38rem]"
-  src="/bandada-semaphore-off-chain-app-architecture.png"
+  src="/bandada-semaphore-off-chain-app-architecture.svg"
   alt="Bandada Semaphore off-chain app architecture"
 />
 
