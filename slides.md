@@ -188,6 +188,26 @@ transition: slide-up
 | Remove member(s)            | ✅        | ❌       |
 
 ---
+transition: slide-up
+---
+
+# Credential Groups
+
+<div class="flex justify-center items-center mt-[2rem]">
+<img
+  class="center w-[35rem]"
+  src="/bandada-credentials.svg"
+  alt="Bandada Credentials"
+/>
+</div>
+
+<br>
+
+<div class="flex justify-center items-center">
+<a href="https://github.com/bandada-infra/bandada/tree/main/libs/credentials" target="_blank">https://github.com/bandada-infra/bandada/tree/main/libs/credentials</a>
+</div>
+
+---
 transition: slide-left
 ---
 
@@ -343,7 +363,7 @@ hideInToc: true
 <div class="flex justify-between items-center">
 <div>
 <div>Boilerplate live app:</div>
-<a href="">https://demo.bandada.pse.dev/</a>
+<a href="https://demo.bandada.pse.dev/" target="_blank">https://demo.bandada.pse.dev/</a>
 </div>
 <img
   class="w-[10rem] rounded-md"
