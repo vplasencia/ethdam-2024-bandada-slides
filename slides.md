@@ -203,7 +203,8 @@ transition: slide-up
 
 <br>
 
-<div class="flex justify-center items-center">
+<div class="flex justify-center items-center gap-2">
+<div>Credentials package:</div>
 <a href="https://github.com/bandada-infra/bandada/tree/main/libs/credentials" target="_blank">https://github.com/bandada-infra/bandada/tree/main/libs/credentials</a>
 </div>
 
