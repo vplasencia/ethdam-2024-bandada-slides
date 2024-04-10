@@ -416,7 +416,7 @@ Document with the main Bandada information and links for hackers.
 ::right::
 
 <img
-  src="bandada-birds.svg"
+  src="/bandada-birds.svg"
   alt="Bandada API SDK demo"
 />
 
