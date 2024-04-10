@@ -42,6 +42,10 @@ Vivian Plasencia
   alt="Flock"
 />
 
+<div class="abs-b mb-12 ml-6 flex text-12px opacity-70">
+  <p>ETHDam 2024</p>
+</div>
+
 <div class="abs-b m-6 flex text-12px opacity-70">
   <p>Privacy & Scaling Explorations | Ethereum Foundation</p>
 </div>
@@ -82,32 +86,44 @@ hideInToc: true
 
 <br>
 
-![birds](/birds.jpeg)
+<Toc minDepth="1" maxDepth="1" listClass=""></Toc>
 
 ::right::
 
-<Toc minDepth="1" maxDepth="1" listClass=""></Toc>
+<img
+  src="/bandada-birds.svg"
+  alt=""
+/>
 
 ---
 transition: slide-left
+layoutClass: gap-16
+layout: two-cols
 ---
 
 # What is Bandada?
 
 <br>
 
-Bandada is an infrastructure to manage privacy-preserving groups. It also has antisybil mechanisms which means that you can only join a group if you meet a specific criteria.
+<img
+  class="center"
+  src="/birds.jpeg"
+  alt="Birds"
+/>
+
+<a href="https://docs.bandada.pse.dev/" target="_blank" alt="Docs" title="Bandada docs" class="text-center">
+<span>https://docs.bandada.pse.dev/</span>
+</a>
+
+::right::
+
+Bandada is an infrastructure to manage privacy-preserving groups. It also provides antisybil mechanisms by using credential groups so that you can only join a group if you meet a specific criteria.
+
+Bandada is a public good project. It is free and open source. Everyone can use it and contribute to it.
 
 <br>
 
-The groups can be managed using the Dashboard, the REST API endpoints or the API SDK library.
-
-<br>
-<br>
-
-<div v-click>
-Bandada is a Spanish word that means group of birds. It is the same as the English word flock.
-</div>
+- Bandada is a Spanish word that means group of birds. It is the same as the English word flock.
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -122,13 +138,25 @@ Here is another comment.
 transition: slide-left
 ---
 
-# Bandada use cases
+# Use cases
+
+<br>
 
 - Platforms for DAOs
+
 - Group of people in a private organization
+
 - Group with members who have contributed to a specific GitHub repository
+
 - Groups of wallets holding a specific NFT
+
 - Group of members with +500 Twitter (X) followers
+
+- Group of people with +300 number of transactions on a specific network
+
+<br>
+
+Ideas to build with Bandada: [https://github.com/orgs/bandada-infra/discussions/367](https://github.com/orgs/bandada-infra/discussions/367)
 
 ---
 transition: slide-up
@@ -145,7 +173,7 @@ layout: center
 transition: slide-up
 ---
 
-## Bandada Functionalities
+# Functionalities
 
 <br>
 
@@ -163,7 +191,7 @@ transition: slide-up
 transition: slide-up
 ---
 
-## Tools to manage the groups
+# Interact with Bandada
 
 <br>
 
@@ -173,6 +201,169 @@ transition: slide-up
 | API SDK   | ✅        | ❌       |
 | Dashboard | ✅        | ✅       |
 
+<br>
+<br>
+
+❌ The Bandada on-chain groups are Semaphore groups at the moment, you can work with them using the Semaphore packages. More about Semaphore: https://semaphore.pse.dev/
+
+---
+transition: slide-up
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Start using Bandada
+
+<br>
+
+There are 3 ways you can start using Bandada in your project:
+
+<br>
+
+- [API]()
+
+- [API SDK]()
+
+- [Boilerplate]()
+
+::right::
+
+<img
+  class="center w-[12rem] rounded-md"
+  src="/bandada-docs-qrcode.png"
+  alt="Bandada docs"
+/>
+
+Bandada documentation
+
+https://docs.bandada.pse.dev/
+
+---
+transition: slide-up
+hideInToc: true
+layout: iframe-right
+url: https://api.bandada.pse.dev/
+class: api-website
+---
+
+# API
+
+<br>
+
+The API has a list of endpoints to interact with the Bandada infrastructure.
+
+It is compatible with any programming language that supports REST API requests.
+
+<img
+  class="center w-[10rem] rounded-md"
+  src="/bandada-api-docs-qrcode.png"
+  alt="Bandada API docs"
+/>
+
+[https://api.bandada.pse.dev/](https://api.bandada.pse.dev/)
+
+---
+transition: slide-up
+layout: two-cols
+hideInToc: true
+layoutClass: gap-16
+---
+
+# API SDK
+
+<br>
+
+The API SDK is a wrapper of the API.
+
+It is a JavaScript package that provides a list of functions to make it easier to work with the Bandada API.
+
+<br>
+
+#### Install the API SDK package
+
+```bash
+npm install @bandada/api-sdk
+```
+
+<br>
+
+https://docs.bandada.pse.dev/api/api-sdk
+
+::right::
+
+<img
+  class="center w-[12rem] rounded-md"
+  src="/bandada-api-sdk-demo-qrcode.png"
+  alt="Bandada API SDK demo"
+/>
+
+API SDK Demo
+
+https://github.com/bandada-infra/bandada-sdk-demo
+
+---
+transition: slide-up
+hideInToc: true
+---
+
+# API SDK Example
+
+```ts {all|1-3|5-14|16-18|20|all}
+import { ApiSdk, GroupCreationDetails } from "@bandada/api-sdk"
+
+const apiSdk = new ApiSdk()
+
+const apiKey = "70f07d0d-6aa2-4fe1-b4b9-06c271a641dc"
+
+const groupCreationDetails: GroupCreationDetails = {
+  name: "Group 1",
+  description: "This is Group 1",
+  treeDepth: 16,
+  fingerprintDuration: 3600
+}
+
+const group = await apiSdk.createGroup(groupCreationDetails, apiKey)
+
+const members = ["1", "2", "3"]
+
+await apiSdk.addMembersByApiKey(group.id, members, apiKey)
+
+await apiSdk.removeMemberByApiKey(group.id, "1", apiKey)
+```
+
+---
+transition: slide-up
+hideInToc: true
+---
+
+# Boilerplate
+
+<br>
+
+<div class="flex justify-between items-center">
+<div>
+<div>Boilerplate live app:</div>
+<a href="">https://demo.bandada.pse.dev/</a>
+</div>
+<img
+  class="w-[10rem] rounded-md"
+  src="/bandada-boilerplate-live-app-qrcode.png"
+  alt="Bandada API SDK demo"
+/>
+</div>
+
+<br>
+
+You can fork it, clone it or use it as a template:
+
+https://github.com/bandada-infra/boilerplate
+
+<img
+  class="center"
+  src="/bandada-boilerplate-repo.png"
+  alt="Bandada boilerplate repo"
+/>
+
 ---
 transition: slide-left
 layout: center
@@ -181,32 +372,59 @@ layout: center
 <img
   class="center w-[38rem]"
   src="/bandada-semaphore-off-chain-app-architecture.png"
-  alt=""
+  alt="Bandada Semaphore off-chain app architecture"
 />
 
 ---
 transition: slide-left
 ---
 
-# Bandada Roadmap
+# Roadmap
+
+<br>
 
 - Improve user experience and developer experience (Documentation, SDKs, CLI, templates).
-- Integrate other protocols like EAS, POAP, Zupass, etc.
+
+- Integrate other protocols like POAP, Zupass, etc.
+
 - Logical operators for credentials, create groups with multiple credentials.
+
 - Work on on-chain groups to have the same functionalities that off-chain groups have now (join groups with invite link, credential groups, etc.).
-- Build a modular architecture that supports several data structures and different types of groups, not just Semaphore Groups.
+
+- Build a modular architecture that supports several data structures and different types of groups.
 
 ---
 transition: slide-left
+layout: two-cols
+layoutClass: gap-16
 ---
 
 # Hacker Guide
 
-qrcode
+<br>
+
+Document with the main Bandada information and links for hackers.
+
+<br>
+
+<img
+  class="w-[15rem] rounded-md"
+  src="/bandada-hackathon-guide-qrcode.png"
+  alt="Bandada API SDK demo"
+/>
+
+::right::
+
+<img
+  src="bandada-birds.svg"
+  alt="Bandada API SDK demo"
+/>
 
 ---
 transition: slide-up
 layout: two-cols
+layoutClass: gap-16
+hideInToc: true
 ---
 
 # Connect
@@ -226,504 +444,34 @@ layout: two-cols
 
 ::right::
 
-### Telegram @vivianpc
-
-<br>
-<br>
-
-### Discord @Vivian Plasencia#2192
-
-<br>
-<br>
-
-### X (Twitter) @ViviPlasenciaC
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|                                                    |                             |
-| -------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                | next animation or slide     |
-| <kbd>left</kbd> / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                      | previous slide              |
-| <kbd>down</kbd>                                    | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-
 <img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
+  class="flex top-2 left-2 w-50 justify-center align-center rounded-md"
+  src="/vivian-telegram-qrcode.png"
+  alt="Flock"
 />
 
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from "vue"
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery"
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: "John Doe",
-        books: [
-          "Vue 2 - Advanced Guide",
-          "Vue 3 - Basic Guide",
-          "Vue 4 - The Mystery"
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: "John Doe",
-      books: [
-        "Vue 2 - Advanced Guide",
-        "Vue 3 - Basic Guide",
-        "Vue 4 - The Mystery"
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: "John Doe",
-  books: [
-    "Vue 2 - Advanced Guide",
-    "Vue 3 - Basic Guide",
-    "Vue 4 - The Mystery"
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
+<div class="flex gap-2 items-center">
+<h3>Telegram</h3>
+<a href="https://t.me/vivianpc" target="_blank" alt="Telegram" class="text-center">
+<span>vivianpc</span>
+</a>
 </div>
 
 <br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn More](https://sli.dev/guide/animations#click-animations)
-
-</div>
-
----
-preload: false
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div v-motion :initial="{ x: -80 }" :enter="{ x: 0 }">Slidev</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
+<br>
 <br>
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-
-$$
-{1|3|all}
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
+<div class="flex gap-2 items-center">
+<h3>GitHub</h3>
+<a href="https://github.com/vplasencia" target="_blank" alt="Github" class="text-center">
+<span>vplasencia</span>
+</a>
 </div>
 
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
+<br>
+<br>
 
----
-src: ./pages/multiple-entries.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Moanco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from "vue"
-import hello from "./external"
-
-const code = ref("const a = 1")
-hello()
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-function fibonacci(n: number): number {
-  return n <= 1 ? n : fibonacci(n - 1) + fibonacci(n - 2) // you know, this is NOT the best way to do it :P
-}
-
-console.log(Array.from({ length: 10 }, (_, i) => fibonacci(i + 1)))
-```
-
----
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+<div class="flex gap-2 items-center">
+<h3>Discord - </h3>
+<span>vivianplasencia</span>
+</div>
