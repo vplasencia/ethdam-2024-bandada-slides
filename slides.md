@@ -393,6 +393,8 @@ transition: slide-left
 
 - Build a modular architecture that supports several data structures and different types of groups.
 
+https://github.com/orgs/bandada-infra/discussions/350
+
 ---
 transition: slide-left
 layout: two-cols
