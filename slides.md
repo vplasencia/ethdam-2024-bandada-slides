@@ -414,7 +414,7 @@ transition: slide-left
 https://github.com/orgs/bandada-infra/discussions/350
 
 ---
-transition: fade
+transition: slide-up
 layout: two-cols
 layoutClass: gap-16
 ---
