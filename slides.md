@@ -444,6 +444,7 @@ Document with the main Bandada information and links for hackers.
 transition: slide-left
 layout: two-cols
 layoutClass: gap-16
+hideInToc: true
 ---
 
 # Presentation slides
