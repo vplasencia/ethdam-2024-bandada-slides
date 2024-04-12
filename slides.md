@@ -10,7 +10,7 @@ fonts:
   serif: Poppins
   # for code blocks, inline code, etc.
   mono: Fira Code
-title: Welcome to Slidev
+title: Bandada - Managing Privacy-Preserving Groups
 info: |
   ## Bandada ETHDam 2024
   Presentation slides for ETHDam 2024.
@@ -54,7 +54,7 @@ Vivian Plasencia
   <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon:edit />
   </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
+  <a href="https://github.com/vplasencia/ethdam-2024-bandada-slides" target="_blank" alt="GitHub" title="Open in GitHub"
     class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
     <carbon-logo-github />
   </a>
@@ -417,7 +417,7 @@ transition: slide-left
 https://github.com/orgs/bandada-infra/discussions/350
 
 ---
-transition: slide-left
+transition: fade
 layout: two-cols
 layoutClass: gap-16
 ---
@@ -433,14 +433,41 @@ Document with the main Bandada information and links for hackers.
 <img
   class="w-[15rem] rounded-md"
   src="/bandada-hackathon-guide-qrcode.png"
-  alt="Bandada API SDK demo"
+  alt="Bandada hackathon guide qrcode"
 />
 
 ::right::
 
 <img
   src="/bandada-birds.svg"
-  alt="Bandada API SDK demo"
+  alt="Bandada birds"
+/>
+
+---
+transition: slide-left
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Presentation slides
+
+<br>
+
+This presentation is open source, you can check the slides and code.
+
+<br>
+
+<img
+  class="w-[15rem] rounded-md"
+  src="/presentation-qrcode.png"
+  alt="Presentation qrcode"
+/>
+
+::right::
+
+<img
+  src="/bandada-birds.svg"
+  alt="Bandada birds"
 />
 
 ---
